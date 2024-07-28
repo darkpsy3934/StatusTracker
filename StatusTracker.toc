@@ -1,0 +1,15 @@
+## Interface: 110000, 110002
+
+## Title: StatusTracker
+## Notes: Tracks character status and alerts for certain events
+## Author: WarcraftTerise
+## Version: @project-version@
+
+## X-Category: Combat
+## X-License: All Rights Reserved: Modification prohibited without authorisation
+## X-Website: https://warcraft.tatooinetales.tech
+## X-Curse-Project-ID: 1060509
+
+StatusTracker.lua
+CooldownTracker.lua
+PetTracker.lua
