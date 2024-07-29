@@ -19,4 +19,3 @@ StatusTracker.lua
 PetTracker.lua
 AggroTracker.lua
 
-StatusTrackerOptions.lua
