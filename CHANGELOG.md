@@ -11,8 +11,10 @@
     - Plays a notification sound and displays a temporary on-screen text alert when abilities become available
 * **Aggro Tracker (Tank & DPS):**
     - Integrated an aggro tracker that provides real-time feedback on your threat status
+    - Distinguishes between Main Tank and Off Tank status
     - Displays different coloured text messages to indicate your threat status
         - Tank: Aggro, Losing Aggro, Gaining Aggro, No Aggro
+        - Off Tank Threat Transitions: Good Transitions and Bad Transitions
         - Other Roles: Aggro, Losing Aggro, Gaining Aggro, No Aggro
 
 **Improvements:**
@@ -23,7 +25,7 @@
 
 **Known Issues:**
 
-* **Threat Transition Tracking:** The current aggro tracker for tanks does not distinguish between smooth and sudden threat transitions, nor does it recognise off-tank status. This will be addressed in a future release.
+* **Threat Transition Tracking:** The current aggro tracker for tanks does not distinguish between smooth and sudden threat transitions
 * **Customisation Options:** The planned configuration and customisation options are not yet implemented
 * **Pet Tracking:** Pet health tracking and alerts are in development, so expect bugs when it comes to this.
 
