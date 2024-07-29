@@ -7,7 +7,7 @@ alertTextFrame:SetPoint("CENTER")
 alertTextFrame:SetSize(250, 50)
 alertTextFrame:Hide()
 
-local alertText = alertTextFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+local alertText = alertTextFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
 alertText:SetAllPoints()
 alertText:SetJustifyH("CENTER")
 alertText:SetJustifyV("MIDDLE")
@@ -17,33 +17,50 @@ local function UpdateAggroStatus()
         local isTank = GetSpecializationRole(GetSpecialization()) == "TANK"
 
         if isTank then
-            local status, threatpct, rawthreatpct, threatvalue = UnitDetailedThreatSituation("player", "target")
+            local status, _, _, _, rawThreatPct = UnitDetailedThreatSituation("player", "target")
 
-            if status == 1 then -- Have aggro
-                alertText:SetText("|cFF00FF00** AGGRO **|r")
-            elseif status == 2 then -- Losing aggro
-                alertText:SetText("|cFFFFFF00-- AGGRO --|r")
-            elseif status == 3 then -- Gaining aggro
-                alertText:SetText("|cFFFF8000++ AGGRO ++|r")
-            elseif status == nil then -- Not on threat table
-                alertText:SetText("|cFFFF0000!! AGGRO !!|r")
+            if rawThreatPct == nil then
+                alertText:SetText("|cFFFF0000No Aggro|r")
+            else
+                local isOffTank = rawThreatPct < 100
+                local isGoodTransition = rawThreatPct >= 80 and rawThreatPct < 100
+                local isBadTransition = rawThreatPct < 80
+
+                if isOffTank then
+                    if isGoodTransition then
+                        alertText:SetText("|cFF9494FFGood Transition (OT)|r") -- Blue-grey
+                    elseif isBadTransition then
+                        alertText:SetText("|cFF994C00Bad Transition (OT)|r")  -- Dark orange
+                    else
+                        alertText:SetText("|cFFA020F0Off Tank|r")            -- Purple
+                    end
+                else
+                    if status == 1 then -- Have aggro
+                        alertText:SetText("|cFF00FF00Aggro|r")
+                    elseif status == 2 then -- Losing aggro
+                        alertText:SetText("|cFFFFFF00Losing Aggro|r")
+                    elseif status == 3 then -- Gaining aggro
+                        alertText:SetText("|cFFFF8000Gaining Aggro|r")
+                    end
+                end
             end
+
         else -- Not a tank
-            local status, threatpct, rawthreatpct, threatvalue = UnitDetailedThreatSituation("player", "target")
+            local status = UnitThreatSituation("player", "target")
 
             if status == 1 then
-                alertText:SetText("|cFFFF0000!! AGGRO !!|r")
+                alertText:SetText("|cFFFF0000Aggro!|r")
             elseif status == 2 then
-                alertText:SetText("|cFFFFFF00-- AGGRO --|r")
+                alertText:SetText("|cFFFFFF00Losing Aggro|r")
             elseif status == 3 then
-                alertText:SetText("|cFFFF8000++ AGGRO ++|r")
-            elseif status == nil then
-                alertText:SetText("|cFF00FF00** AGGRO **|r")
+                alertText:SetText("|cFFFF8000Gaining Aggro|r")
+            else
+                alertText:SetText("|cFF00FF00No Aggro|r")
             end
         end
-
-        alertTextFrame:Show()
     else
         alertTextFrame:Hide()
     end
 end
+
+f:SetScript("OnEvent", UpdateAggroStatus)
