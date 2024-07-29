@@ -14,5 +14,9 @@
 ## X-WoWI-ID: 26786
 
 StatusTracker.lua
-CooldownTracker.lua
+
+
 PetTracker.lua
+AggroTracker.lua
+
+StatusTrackerOptions.lua

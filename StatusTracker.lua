@@ -5,7 +5,7 @@ local manaThreshold = StatusTrackerDB.manaThreshold or 20
 
 local f = CreateFrame("Frame")
 f:RegisterEvent("UNIT_HEALTH")
-f:RegisterEvent("UNIT_POWER")
+f:RegisterEvent("UNIT_MANA")
 
 local lowHealthSound = "Sounds/LowHealth.ogg"
 local lowManaSound = "Sounds/LowMana.ogg"
