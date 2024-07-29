@@ -11,6 +11,7 @@
 
 ## X-Curse-Project-ID: 1060509
 ## X-Wago-ID: BNBexMGx
+## X-WoWI-ID: 26786
 
 StatusTracker.lua
 CooldownTracker.lua
