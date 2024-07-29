@@ -8,7 +8,9 @@
 ## X-Category: Combat
 ## X-License: All Rights Reserved: Modification prohibited without authorisation
 ## X-Website: https://warcraft.tatooinetales.tech
+
 ## X-Curse-Project-ID: 1060509
+## X-Wago-ID: as3Dfg57
 
 StatusTracker.lua
 CooldownTracker.lua
