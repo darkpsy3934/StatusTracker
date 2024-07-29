@@ -10,7 +10,7 @@
 ## X-Website: https://warcraft.tatooinetales.tech
 
 ## X-Curse-Project-ID: 1060509
-## X-Wago-ID: as3Dfg57
+## X-Wago-ID: BNBexMGx
 
 StatusTracker.lua
 CooldownTracker.lua
