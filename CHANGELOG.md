@@ -1,34 +1,30 @@
-## 1.0.0-alpha-4
+## 1.0.0-beta-1
+
+**Summary:**
+This is the first beta release of StatusTracker, an addon designed to enhance your situational awareness in World of Warcraft. It provides real-time alerts and information about your character's health, mana, and threat level.
 
 **New Features:**
 
-* **Low Health Alert:**
-    - Added an audible alert that plays a distinct sound when your health is below 35%
-* **Low Mana Alert:**
-    - Implemented a similar audible alert that triggers when your mana is below 20%
-* **Cooldown Tracker:**
-    - Introduced a dynamic cooldown tracker that monitors all spells with cooldown exceeding 3 seconds
-    - Plays a notification sound and displays a temporary on-screen text alert when abilities become available
-* **Aggro Tracker (Tank & DPS):**
-    - Integrated an aggro tracker that provides real-time feedback on your threat status
-    - Distinguishes between Main Tank and Off Tank status
-    - Displays different coloured text messages to indicate your threat status
-        - Tank: Aggro, Losing Aggro, Gaining Aggro, No Aggro
-        - Off Tank Threat Transitions: Good Transitions and Bad Transitions
-        - Other Roles: Aggro, Losing Aggro, Gaining Aggro, No Aggro
+* **Health and Mana Alerts:**
+    - Audible alerts for low health (below 35%) and low mana (below 20%).
+
+* **Aggro Tracker:**
+    - Real-time threat monitoring for both tanks and DPS/other roles.
+    - Colored text indicators for different threat states.
+    - Tank-specific information includes main tank/off-tank status and threat transitions.
 
 **Improvements:**
 
-* **Code Optimization:** Refactored various parts of the code for improved performance
-* **Error Handling:** Added error catching to prevent run-on errors
-* **UI Polish:** Enhanced the visual presentation of alert messages
+* **Threat Smoothing:** Improved threat transition detection for tanks to reduce alert flickering.
 
 **Known Issues:**
 
-* **Threat Transition Tracking:** The current aggro tracker for tanks does not distinguish between smooth and sudden threat transitions
-* **Customisation Options:** The planned configuration and customisation options are not yet implemented
-* **Pet Tracking:** Pet health tracking and alerts are in development, so expect bugs when it comes to this.
+* **Customization UI:** A dedicated options panel for configuring alerts and other settings is not yet available. This feature will be implemented in a future update.
+* **Cooldown Tracker:** The cooldown tracker feature is currently disabled due to ongoing development and testing. We expect to reintroduce it in an upcoming release with enhanced functionality.
+* **Pet Health Alert:** Pet health tracking is still under development. The current version provides basic chat messages about low pet health, but more comprehensive alerts will be added later.
+* **Additional Tank Alerts:**  More granular threat information for tanks (e.g., "Threatened" vs. "Secure" aggro) will be added in future updates.
 
-**Additional Notes:**
+**Beta Testing Focus:**
 
-* This is an alpha release, so expect further changes and improvements
+* **Aggro Tracker Feedback:** We're particularly interested in feedback on the aggro tracker's accuracy and responsiveness in various situations.
+* **Bug Reports:**  Please report any bugs or compatibility issues you encounter.
